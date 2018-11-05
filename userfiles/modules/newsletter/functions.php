@@ -109,6 +109,16 @@ function newsletter_get_subscribers($params) {
 	return db_get($params);
 }
 
+
+api_expose_admin('newsletter_get_subscriber');
+function newsletter_get_subscriber($subscriber_id)
+{
+	$data = ['id' => $subscriber_id, 'single' => true];
+	$table = "newsletter_subscribers";
+	
+	return db_get($table, $data);
+}
+
 api_expose_admin('newsletter_save_subscriber');
 function newsletter_save_subscriber($data) {
 	$table = "newsletter_subscribers";
