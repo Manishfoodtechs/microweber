@@ -42,19 +42,21 @@
     }
 </script>
 
-<a class="mw-ui-btn mw-ui-btn-icon" href="javascript:;" onclick="$('#add-campaign-form').show()"> <span
-            class="mw-icon-plus"><?php _e('Add new campaign'); ?></span> </a>
-<form id="add-campaign-form" onSubmit="edit_campaign(this); return false;" style="display:none">
-    <div class="mw-ui-field-holder">
-        <label class="mw-ui-label"><?php _e('campaign Name'); ?></label>
-        <input name="name" type="text" class="mw-ui-field"/>
-    </div>
-    <div class="mw-ui-field-holder">
-        <label class="mw-ui-label"><?php _e('campaign Email'); ?></label>
-        <input name="email" type="text" class="mw-ui-field"/>
-    </div>
-    <button type="submit" class="mw-ui-btn"><?php _e('Save'); ?></button>
+<a class="mw-ui-btn mw-ui-btn-icon" href="javascript:;"
+	onclick="$('#add-campaign-form').show()"> <span class="mw-icon-plus"></span> <?php _e('Add new campaign'); ?>
+</a>
+<form id="add-campaign-form"
+	onSubmit="edit_campaign(this); return false;" style="display: none">
+	<div class="mw-ui-field-holder">
+		<label class="mw-ui-label"><?php _e('campaign Name'); ?></label> <input
+			name="name" type="text" class="mw-ui-field" />
+	</div>
+	<div class="mw-ui-field-holder">
+		<label class="mw-ui-label"><?php _e('campaign Email'); ?></label> <input
+			name="email" type="text" class="mw-ui-field" />
+	</div>
+	<button type="submit" class="mw-ui-btn"><?php _e('Save'); ?></button>
 </form>
 <div class="mw-clear"></div>
-<br/>
-<module type="newsletter/campaigns_list"/>
+<br />
+<module type="newsletter/campaigns_list" />
