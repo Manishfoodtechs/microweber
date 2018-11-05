@@ -24,6 +24,14 @@
 		
 	});
 
+	function isEmpty(obj) {
+		return Object.keys(obj).length === 0;
+	}
+
+	function errorText(text) {
+		return '<div class="js-danger-text">'+text+'</div>';
+	}
+
 	function runFieldsValidation(instance) {
 		
 		var ok = true;
@@ -55,7 +63,7 @@
 	
     function edit_subscriber(form) {
         
-    	   var errors = {};
+    	 var errors = {};
          var data = mw.serializeFields(form);
         
 			$(':input').each(function(k,v) {
