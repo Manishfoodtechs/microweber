@@ -1,6 +1,6 @@
 <?php return array (
   'fetch' => 8,
-  'default' => 'sqlite',
+  'default' => 'mysql',
   'connections' => 
   array (
     'sqlite' => 

@@ -2,7 +2,7 @@
 
 <?php 
 if (isset($params['id'])) {
-	$data = newsletter_get_subscriber($params['id']);
+    $subscriber = newsletter_get_subscriber($params['id']);
 }
 ?>
 
@@ -44,6 +44,7 @@ if (isset($params['id'])) {
 			});
 			
 	        if (isEmpty(errors)) {
+				
 		        $.ajax({
 		            url: mw.settings.api_url + 'newsletter_save_subscriber',
 		            type: 'POST',
@@ -103,13 +104,17 @@ if (isset($params['id'])) {
 <form class="js-edit-subscriber-form">
 	<div class="mw-ui-field-holder">
 		<label class="mw-ui-label"><?php _e('Subscriber Name'); ?></label> 
-		<input name="name" type="text" value="<?php echo $data['name']; ?>" class="mw-ui-field mw-ui-field-full-width js-validation" />
+		<input name="name" type="text" value="<?php echo $subscriber['name']; ?>" class="mw-ui-field mw-ui-field-full-width js-validation" />
 		<div class="js-field-message"></div>
 	</div>
 	<div class="mw-ui-field-holder">
 		<label class="mw-ui-label"><?php _e('Subscriber Email'); ?></label> 
-		<input name="email" type="text"  value="<?php echo $data['email']; ?>" class="mw-ui-field mw-ui-field-full-width js-validation" />
+		<input name="email" type="text"  value="<?php echo $subscriber['email']; ?>" class="mw-ui-field mw-ui-field-full-width js-validation js-validation-email" />
 		<div class="js-field-message"></div>
 	</div>
 	<button type="submit" class="mw-ui-btn"><?php _e('Save'); ?></button>
+	<?php if(isset($subscriber['id'])): ?>
+	<a class="mw-ui-btn mw-ui-btn-icon" href="javascript:;" onclick="delete_subscriber('<?php print $subscriber['id']; ?>')"> <span class="mw-icon-bin"></span> </a>
+	<input type="hidden" value="<?php echo $subscriber['id']; ?>" name="id" />
+	<?php endif; ?>
 </form>

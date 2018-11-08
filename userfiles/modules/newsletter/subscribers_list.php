@@ -6,7 +6,6 @@ $subscribers_params['order_by'] = "created_at desc";
 $subscribers = newsletter_get_subscribers($subscribers_params);
 ?>
 <?php if ($subscribers): ?>
-
     <div class="table-responsive">
         <table width="100%" border="0" class="mw-ui-table" style="table-layout:fixed">
             <thead>
@@ -39,7 +38,8 @@ $subscribers = newsletter_get_subscribers($subscribers_params);
                     </td>
                     <td>
                         <button class="mw-ui-btn" onclick="edit_subscriber('<?php print $subscriber['id']; ?>')"><?php _e('Edit'); ?></button>
-                        <a class="mw-ui-btn mw-ui-btn-icon" href="javascript:;" onclick="delete_subscriber('<?php print $subscriber['id']; ?>')"> <span class="mw-icon-bin"></span> </a></td>
+                        <a class="mw-ui-btn mw-ui-btn-icon" href="javascript:;" onclick="delete_subscriber('<?php print $subscriber['id']; ?>')"> <span class="mw-icon-bin"></span> </a>
+                   </td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
