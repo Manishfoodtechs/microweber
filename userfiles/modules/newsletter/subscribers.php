@@ -1,6 +1,7 @@
 <?php only_admin_access(); ?>
 
 <script>
+
 	function edit_subscriber(id = false) {
 		var data = {};
         data.id = id;

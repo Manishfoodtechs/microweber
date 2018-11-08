@@ -2,6 +2,15 @@
 /* 
  * EMAIL CAMPAIGN FUNCTIONS
  */
+
+api_expose_admin('newsletter_get_campaign');
+function newsletter_get_campaign($campaign_id) {
+    $data = ['id' => $campaign_id, 'single' => true];
+    $table = "newsletter_campaigns";
+    
+    return db_get($table, $data);
+}
+
 api_expose('newsletter_get_campaigns');
 function newsletter_get_campaigns($params) {
     if (is_string($params)) {
